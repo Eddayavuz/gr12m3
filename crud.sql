@@ -2,6 +2,9 @@
 ALTER TABLE company.csvjson
 MODIFY DateOfBirth__1 datetime;
 
+/*NULL Values*/
+INSERT INTO company.csvjson (UserID, FirstName, LastName, Sex, Phone, DateOfBirth__1, JobTitle)
+VALUES ('AB12345678', 'Eda', 'Yavuz', 'Female', '123-456-7890', '1993-08-25', 'developer');
 
 /* CALCULATING THE AGE FROM DATE TIME COLUMN */
 SELECT FirstName, FLOOR(DATEDIFF(NOW(), DateOfBirth__1)/ 365) as age FROM company.csvjson;
